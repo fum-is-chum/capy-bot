@@ -23,15 +23,15 @@ export const coins = {
 
 // Setup default amount to trade for each token in each pool. Set to approximately 1 USD each.
 export const defaultAmount: Record<string, number> = {};
-defaultAmount[coins.SUI] = 1_000_000_000;
-defaultAmount[coins.USDC] = 1_000_000;
-defaultAmount[coins.CETUS] = 15_000_000_000;
-defaultAmount[coins.CETUS0] = 15_000_000_000;
-defaultAmount[coins.BRT] = 150_000_000_000_000;
-defaultAmount[coins.WETH] = 100_000;
-defaultAmount[coins.TOCE] = 100_000_000_000;
-defaultAmount[coins.USDT] = 1_000_000;
-defaultAmount[coins.WBTC] = 3_000;
+defaultAmount[coins.SUI] = 10_000_000_000;
+// defaultAmount[coins.USDC] = 1_000_000;
+// defaultAmount[coins.CETUS] = 15_000_000_000;
+// defaultAmount[coins.CETUS0] = 15_000_000_000;
+// defaultAmount[coins.BRT] = 150_000_000_000_000;
+// defaultAmount[coins.WETH] = 100_000;
+// defaultAmount[coins.TOCE] = 100_000_000_000;
+// defaultAmount[coins.USDT] = 1_000_000;
+// defaultAmount[coins.WBTC] = 3_000;
 
 const RIDE_THE_THREAD_LIMIT = 1.000005;
 const ARBITRAGE_RELATIVE_LIMIT = 1.01;

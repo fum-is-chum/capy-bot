@@ -192,7 +192,7 @@ export class TurbosPool extends Pool<TurbosParams> {
       routes: [
         {
           pool: swapResult.pool,
-          a2b: swapResult.a_to_b,
+          aToB: swapResult.a_to_b,
           nextTickIndex: this.sdk.math.bitsToNumber(
             swapResult.tick_current_index.bits
           ),

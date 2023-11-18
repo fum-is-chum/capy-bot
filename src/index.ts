@@ -157,15 +157,15 @@ capybot.addStrategy(
   )
 );
 
-capybot.addStrategy(
-  new MarketDifference(
-    cetusWBTCtoUSDC,
-    ["BinanceBTCtoUSDC"],
-    [defaultAmount[coins.WBTC], defaultAmount[coins.USDC]],
-    ARBITRAGE_RELATIVE_LIMIT,
-    "Market diff: (W)BTC/USDC, Binance vs CETUS"
-  )
-);
+// capybot.addStrategy(
+//   new MarketDifference(
+//     cetusWBTCtoUSDC,
+//     ["BinanceBTCtoUSDC"],
+//     [defaultAmount[coins.WBTC], defaultAmount[coins.USDC]],
+//     ARBITRAGE_RELATIVE_LIMIT,
+//     "Market diff: (W)BTC/USDC, Binance vs CETUS"
+//   )
+// );
 
 // Start the bot
 capybot.loop(3.6e6, 1000);

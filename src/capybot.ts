@@ -5,7 +5,6 @@ import {
   TransactionBlock,
   mainnetConnection,
 } from "@mysten/sui.js";
-import { setTimeout } from "timers/promises";
 import { DataSource } from "./data_sources/data_source";
 import { CetusPool } from "./dexs/cetus/cetus";
 import { CetusParams, SuiswapParams, TurbosParams } from "./dexs/dexsParams";
@@ -108,7 +107,7 @@ export class Capybot {
           await this.executeTransactionBlock(transactionBlock, strategy);
         }
       }
-      await setTimeout(delay);
+      await new Promise(resolve => setTimeout(resolve, delay));
     }
   }
 

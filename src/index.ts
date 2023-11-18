@@ -5,7 +5,8 @@ import { CetusPool } from "./dexs/cetus/cetus";
 import { TurbosPool } from "./dexs/turbos/turbos";
 import { Arbitrage } from "./strategies/arbitrage";
 import { MarketDifference } from "./strategies/market_difference";
-import { RideTheTrend } from "./strategies/ride_the_trend";
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 // Convenience map from name to address for commonly used coins
 export const coins = {
@@ -75,45 +76,45 @@ capybot.addPool(cetusWBTCtoUSDC);
 capybot.addDataSource(new BinanceBTCtoUSDC());
 
 // Trend riding strategies
-capybot.addStrategy(
-  new RideTheTrend(
-    cetusUSDCtoSUI.uri,
-    5,
-    10,
-    [
-      defaultAmount[cetusUSDCtoSUI.coinTypeA],
-      defaultAmount[cetusUSDCtoSUI.coinTypeB],
-    ],
-    RIDE_THE_THREAD_LIMIT,
-    "RideTheTrend (USDC/SUI)"
-  )
-);
-capybot.addStrategy(
-  new RideTheTrend(
-    cetusCETUStoSUI.uri,
-    5,
-    10,
-    [
-      defaultAmount[cetusCETUStoSUI.coinTypeA],
-      defaultAmount[cetusCETUStoSUI.coinTypeB],
-    ],
-    RIDE_THE_THREAD_LIMIT,
-    "RideTheTrend (CETUS/SUI)"
-  )
-);
-capybot.addStrategy(
-  new RideTheTrend(
-    cetusUSDCtoCETUS.uri,
-    5,
-    10,
-    [
-      defaultAmount[cetusUSDCtoCETUS.coinTypeA],
-      defaultAmount[cetusUSDCtoCETUS.coinTypeB],
-    ],
-    RIDE_THE_THREAD_LIMIT,
-    "RideTheTrend (USDC/CETUS)"
-  )
-);
+// capybot.addStrategy(
+//   new RideTheTrend(
+//     cetusUSDCtoSUI.uri,
+//     5,
+//     10,
+//     [
+//       defaultAmount[cetusUSDCtoSUI.coinTypeA],
+//       defaultAmount[cetusUSDCtoSUI.coinTypeB],
+//     ],
+//     RIDE_THE_THREAD_LIMIT,
+//     "RideTheTrend (USDC/SUI)"
+//   )
+// );
+// capybot.addStrategy(
+//   new RideTheTrend(
+//     cetusCETUStoSUI.uri,
+//     5,
+//     10,
+//     [
+//       defaultAmount[cetusCETUStoSUI.coinTypeA],
+//       defaultAmount[cetusCETUStoSUI.coinTypeB],
+//     ],
+//     RIDE_THE_THREAD_LIMIT,
+//     "RideTheTrend (CETUS/SUI)"
+//   )
+// );
+// capybot.addStrategy(
+//   new RideTheTrend(
+//     cetusUSDCtoCETUS.uri,
+//     5,
+//     10,
+//     [
+//       defaultAmount[cetusUSDCtoCETUS.coinTypeA],
+//       defaultAmount[cetusUSDCtoCETUS.coinTypeB],
+//     ],
+//     RIDE_THE_THREAD_LIMIT,
+//     "RideTheTrend (USDC/CETUS)"
+//   )
+// );
 
 // Add triangular arbitrage strategy: USDC/SUI -> (CETUS/SUI)^-1 -> (USDC/CETUS)^-1.
 capybot.addStrategy(

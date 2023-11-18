@@ -10,13 +10,13 @@ import {
   TransactionBlock,
   mainnetConnection,
 } from "@mysten/sui.js";
-import BN from "bn.js";
 import { getCoinInfo } from "../../coins/coins";
 import { keypair } from "../../index";
 import { getTotalBalanceByCoinType } from "../../utils/utils";
 import { CetusParams } from "../dexsParams";
 import { Pool, PreswapResult } from "../pool";
 import { mainnet } from "./mainnet_config";
+import { BN } from "turbos-clmm-sdk";
 
 function buildSdkOptions(): SdkOptions {
   return mainnet;
